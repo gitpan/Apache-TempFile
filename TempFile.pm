@@ -1,10 +1,10 @@
 # Apache::TempFile.pm
 #
-# Copyright (c) 1998 Tom Hughes <tom@compton.demon.co.uk>.
+# Copyright (c) 1998-2002 Tom Hughes <tom@compton.nu>.
 # All rights reserved. This program is free software; you can redistribute
 # it and/or modify it under the same terms as Perl itself.
 #
-# $Id: TempFile.pm,v 1.2 1998/08/12 22:21:23 tom Exp $
+# $Id: TempFile.pm,v 1.4 2002/08/17 22:33:39 tom Exp $
 
 package Apache::TempFile;
 
@@ -14,7 +14,7 @@ use Apache;
 use Carp;
 use Exporter;
 
-$Apache::TempFile::VERSION = '0.04';
+$Apache::TempFile::VERSION = '0.05';
 @Apache::TempFile::ISA = qw(Exporter);
 @Apache::TempFile::EXPORT_OK = qw(tempfile tempname);
 %Apache::TempFile::EXPORT_TAGS = ( all => \@Apache::TempFile::EXPORT_OK );
@@ -95,7 +95,7 @@ is generated.
 
 =head1 AUTHOR
 
-Tom Hughes, tom@compton.demon.co.uk
+Tom Hughes, tom@compton.nu
 
 =head1 SEE ALSO
 

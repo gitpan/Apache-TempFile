@@ -1,3 +1,15 @@
+2002-08-17  Tom Hughes  <tom@compton.nu>
+
+        * TempFile.pm
+          Changed version number to 0.05.
+
+        * README
+        * TempFile.pm
+          Changed email address to tom@compton.nu.
+
+        * t/use.t
+          Added a basic test that the module can be loaded.
+
 1998-08-14  Tom Hughes  <tom@compton.demon.co.uk>
 
 	* TempFile.pm
@@ -25,4 +37,4 @@
 	  Allow the TMPDIR environment variable to override the default
           location for temporary files.
 
-$Id: ChangeLog,v 1.2 1998/08/12 22:21:21 tom Exp $
+$Id: ChangeLog,v 1.4 2002/08/17 22:33:39 tom Exp $
