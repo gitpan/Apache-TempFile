@@ -14,7 +14,7 @@ use Apache;
 use Carp;
 use Exporter;
 
-$Apache::TempFile::VERSION = '0.03';
+$Apache::TempFile::VERSION = '0.04';
 @Apache::TempFile::ISA = qw(Exporter);
 @Apache::TempFile::EXPORT_OK = qw(tempfile tempname);
 %Apache::TempFile::EXPORT_TAGS = ( all => \@Apache::TempFile::EXPORT_OK );
@@ -44,12 +44,17 @@ sub tempname
 
   $name = "$name.$extension" if defined($extension);
 
-  Apache->request->register_cleanup(\&cleanup) unless @Apache::TempFile::names;
+  if ($ENV{MOD_PERL} && @Apache::TempFile::names == 0)
+  {
+      Apache->request->register_cleanup(\&cleanup);
+  }
 
   push(@Apache::TempFile::names, $name);
 
   return $name;
 }
+
+END { cleanup(); }
 
 1;
 
